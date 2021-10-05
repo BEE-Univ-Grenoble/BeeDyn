@@ -1,9 +1,39 @@
 ---
 title: "Dynamique des pop - Notes de travail"
-output: html_notebook
----
+ ---
 
 # Quelques données 
 
 - Dynamique des populations : https://fr.wikipedia.org/wiki/Dynamique_des_populations#Esp%C3%A8ces_en_comp%C3%A9tition
 - Lodka-Voltera : https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations 
+
+# Equation de dynamique de pop
+$$
+\frac{\partial N_1}{\partial t} = R_1 N_1 (1 - \frac{N_1 + \alpha_{1,2} N_2}{K1})
+$$
+
+# Concept 
+
+- Milieu
+  + Espèces
+    + Population
+        - taille initiale ($N_0$)
+        - taille(temps)  ($N_t$)
+        - Capacité de charge ($K$)
+        - Taux de reproduction ($R$)
+          - Taux de naissance
+          - Taux de mortalité
+          - Taux de migration
+          
+- Interactions définies entre les espèces $\alpha_{i,j}$
+
+
+
+
+
+
+
+
+
+
+
