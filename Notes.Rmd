@@ -1,0 +1,9 @@
+---
+title: "Dynamique des pop - Notes de travail"
+output: html_notebook
+---
+
+# Quelques données 
+
+- Dynamique des populations : https://fr.wikipedia.org/wiki/Dynamique_des_populations#Esp%C3%A8ces_en_comp%C3%A9tition
+- Lodka-Voltera : https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations 
