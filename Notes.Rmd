@@ -1,6 +1,6 @@
 ---
 title: "Dynamique des pop - Notes de travail"
- ---
+---
 
 # Quelques données 
 
