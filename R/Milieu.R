@@ -1,4 +1,4 @@
-#' Title
+#' Structure Milieu
 #'
 #' @param identifiant
 #'
@@ -15,12 +15,21 @@ Milieu <- function(identifiant) {
   )
 }
 
+#' Ajout_Espece in Milieu
+#'
+#' @param milieu
+#' @param ...
+#'
+#' @return
+#' @export
+#'
+#' @examples
 Ajout_Espece <- function(milieu, ...) {
   especes <- as.list(...)
   milieu$especes <- c(milieu$especes, especes)
 }
 
-#' Title
+#' print.milieu
 #'
 #' @param x
 #' @param ...
@@ -39,7 +48,7 @@ print.milieu <- function(x, ...) {
 
 
 
-#' Title
+#' Length.Milieu
 #'
 #' @param x
 #'
