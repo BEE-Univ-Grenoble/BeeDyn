@@ -31,8 +31,9 @@ Ajout_Espece <- function(milieu, ...) {
 #' @examples
 print.milieu <- function(x, ...) {
   cat("Milieu", x$identifiant, ":nombre d'espèces=", length(x$especes), "\n")
+  cat("Liste d'espèces : \n")
   for (e in x$especes) {
-    print(e)
+    cat(" - ", print(e),"\n")
   }
 }
 
