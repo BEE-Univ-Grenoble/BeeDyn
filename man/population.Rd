@@ -2,7 +2,8 @@
 % Please edit documentation in R/population.R
 \name{population}
 \alias{population}
-\title{Title}
+\title{Population structure
+A structured object to describe population}
 \usage{
 population(identifiant, taille_ini, taux_rep, capacite)
 }
@@ -19,5 +20,9 @@ population(identifiant, taille_ini, taux_rep, capacite)
 Une liste structuré comprenant les paramètres de la population mentionnés ci-dessus
 }
 \description{
-fdsfds sd fsdf sdfsdfsd
+Population structure
+A structured object to describe population
+}
+\examples{
+population(34, 50, 0.8, 5000)
 }
