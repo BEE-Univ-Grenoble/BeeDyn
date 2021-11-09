@@ -10,7 +10,7 @@ Espece(identifiant)
 \item{identifiant}{une chaine de caractères precisant un code pour chaque espèce}
 }
 \value{
-une instance de la classe espèce.
+une instance de la classe espèce
 }
 \description{
 Crée une nouvelle instance de la classe \code{Espece}

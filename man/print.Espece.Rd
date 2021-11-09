@@ -2,16 +2,22 @@
 % Please edit documentation in R/Espece.R
 \name{print.Espece}
 \alias{print.Espece}
-\title{Title}
+\title{Affiche un objet espèce}
 \usage{
 \method{print}{Espece}(x, ...)
 }
 \arguments{
+\item{x}{identifiant de l'espèce}
+
 \item{...}{}
 }
 \value{
-
+Renvoie l'identifiant et le nombre de populations d'une espèce
 }
 \description{
-Title
+Affiche un objet espèce
+}
+\examples{
+ poule <- Espece("Gallus gallus")
+ print(poule)
 }
