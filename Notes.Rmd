@@ -1,6 +1,6 @@
 ---
 title: "Dynamique des pop - Notes de travail"
- ---
+---
 
 # Quelques données 
 
@@ -9,7 +9,7 @@ title: "Dynamique des pop - Notes de travail"
 
 # Equation de dynamique de pop
 $$
-\frac{\partial N_1}{\partial t} = R_1 N_1 (1 - \frac{N_1 + \alpha_{1,2} N_2}{K1})
+\frac{\partial N_1}{\partial t} = R_1 N_1 (1 - (\alpha_{1,1} N_1 + \alpha_{1,2} N_2))
 $$
 
 # Concept 
@@ -27,8 +27,35 @@ $$
           
 - Interactions définies entre les espèces $\alpha_{i,j}$
 
+# Les classes à défiinir
 
+## Milieu
 
+- identifiant : charactere
+- especes : liste d'objets de la classe `Espece`
+
+## Espece
+
+- identifiant : charactere
+- populations : liste d'objets de la classe `Population`
+
+## Population
+
+- identifiant : charactere
+- capacite : une valeur numérique indiquant la taille 
+             maximum de la population.
+- taux : une valeur numérique indiquant le taux de reproduction 
+             maximum de la population.
+- taille : un vecteur de numérique indiquant la taille
+           de la population au cours du temps
+
+## Competition
+
+Une matrice carrée de taille nombre de population, 
+par défaut diagonale est à $1/K_{pop}$ les autres valeurs sont à 0.
+les populations en colonne affectent les populations en ligne
+si > 0 -> réduit la population ligne
+si < 0 -> favorise la population ligne
 
 
 
