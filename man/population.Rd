@@ -26,3 +26,6 @@ A structured object to describe population
 \examples{
 population(34, 50, 0.8, 5000)
 }
+\examples{
+population(34, 50, 0.8, 500)
+}
