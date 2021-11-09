@@ -43,3 +43,7 @@ print.Espece <- function(x, ...) {
 
   cat("Espece : ", x$identifiant, "avec ",length(x)," populations\n")
 }
+
+ajoute_population <- function(espece,population){
+
+}

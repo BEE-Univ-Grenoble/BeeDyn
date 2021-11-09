@@ -3,3 +3,4 @@
 S3method(length,Espece)
 S3method(print,Espece)
 export(Espece)
+export(population)
