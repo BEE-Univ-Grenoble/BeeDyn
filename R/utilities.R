@@ -11,7 +11,7 @@ id <- function(object) {
 }
 
 
-#' Add elements to a DeeDyn object
+#' Insert elements to a DeeDyn object
 #'
 #' @param object
 #' @param ...

@@ -2,7 +2,7 @@
 #'
 #' @param identifiant
 #'
-#' @return
+#' @return un objet de classe milieu avec un identifiant
 #' @export
 #'
 #' @examples
@@ -14,11 +14,11 @@ Milieu <- function(identifiant) {
   m
 }
 
-#' Title
+#' Verification si l'objet est de la classe milieu
 #'
 #' @param x
 #'
-#' @return
+#' @return True/false en fonction de si l'objet est de classe Milieu ou non
 #' @export
 #'
 #' @examples
@@ -26,12 +26,12 @@ is_Milieu <- function(x) {
   "Milieu" %in% class(x)
 }
 
-#' Ajout_Espece in Milieu
+#' Ajout des Especes dans un Milieu
 #'
 #' @param milieu
 #' @param ...
 #'
-#' @return
+#' @return Un objet de classe Milieu contenant ... espèces
 #' @export
 #'
 #' @examples
@@ -64,7 +64,7 @@ print.Milieu <- function(x, ...) {
 #'
 #' @param x
 #'
-#' @return
+#' @return une valeur numérique
 #' @export
 #'
 #' @examples
