@@ -2,7 +2,7 @@
 #'
 #' @param object
 #'
-#' @return
+#' @return a character value containing to object id
 #' @export
 #'
 #' @examples
@@ -13,13 +13,11 @@ id <- function(object) {
 
 #' Insert elements to a DeeDyn object
 #'
-#' @param object
-#' @param ...
+#' @param object the DeeDyn object to modify
+#' @param ... every objects to be added to the object parameter
 #'
-#' @return
 #' @export
 #'
-#' @examples
 insert <- function(object,...) {
   UseMethod("insert",object)
 }
