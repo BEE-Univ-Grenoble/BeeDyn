@@ -2,16 +2,20 @@
 % Please edit documentation in R/Espece.R
 \name{length.Espece}
 \alias{length.Espece}
-\title{Title}
+\title{Calcule le nombre de populations pour une espèce}
 \usage{
 \method{length}{Espece}(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{identifiant d'une espèce}
 }
 \value{
-
+le nombre de population
 }
 \description{
-Title
+On appellera longueur d'une espèce son nombre de populations associées
+}
+\examples{
+ nb_p <- length.Espece(Gallus gallus)
+ print(nb_p)
 }
