@@ -10,9 +10,10 @@
 #'   e <- Espece("Gallus gallus")
 #'   print(e)
 Espece <- function(identifiant) {
-  structure(list(identifiant = identifiant,
-                 populations = list()),
-            class = "Espece")
+  e <- new.env()
+  class(e) <- "Espece"
+  e$identifiant = identifiant
+  e
 }
 
 
