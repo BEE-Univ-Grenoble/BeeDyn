@@ -17,18 +17,8 @@
 #' insert(e2, p3)
 #' Competition(m)
 Competition <- function(milieu) {
-  if (!is_Milieu(milieu)) {
-    stop("milieu must be of class Milieu")
-  }
 
-  nb_species <- length(milieu)
-  # Calcul du nombre de population
-  npop <- 0
-  for (e in get_species(milieu)) {
-    npop <- npop + length(e)
-  }
-
-  npop
+  npop <- npops(milieu)
 
   # Création de la matrice en fonction du nombre de population
   competition_matrice <- matrix(0, ncol = npop, nrow = npop)

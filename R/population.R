@@ -89,7 +89,7 @@ length.Population <- function(x) {
 #'
 #' @examples
 #' capacity(pop)
-capacity <- function(x) {
+get_capacity <- function(x) {
   x$capacite
 }
 
@@ -105,4 +105,16 @@ capacity <- function(x) {
 #' pop_size(pop)
 get_pop_size <- function(x){
   x$taille
+}
+
+#' Title
+#'
+#' @param x
+#'
+#' @return
+#' @export
+#'
+#' @examples
+get_growth_rate <- function(x) {
+  x$taux
 }
