@@ -33,10 +33,10 @@ npops <- function(milieu) {
 #' Simulation des tailles de population
 #'
 #' @param milieu objet de type "Milieu"
-#' @param temps
-#' @param competition
+#' @param temps numeric
+#' @param competition objet de type "Competition"
 #'
-#' @return
+#' @return Pour chaque population leur taille aux différents temps
 #' @export
 #'
 #' @examples
