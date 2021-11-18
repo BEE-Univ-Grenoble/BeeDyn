@@ -42,7 +42,7 @@ Competition <- function(milieu) {
   competition_matrice
 }
 
-#' Title
+#' Verifier la classe d'une Competition
 #'
 #' @param x objet
 #'
