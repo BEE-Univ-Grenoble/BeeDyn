@@ -36,10 +36,11 @@ length.Espece <- function(x) {
 
 #' Affiche un objet espèce
 #'
-#' @param x identifiant de l'espèce
+#' Affiche l'identifiant et le nombre de populations d'une espèce
+#'
+#' @param x un objet instance de Espece
 #' @param ...
 #'
-#' @return Renvoie l'identifiant et le nombre de populations d'une espèce
 #' @export
 #'
 #' @examples
@@ -55,15 +56,14 @@ print.Espece <- function(x, ...) {
 #' @param espece
 #' @param population
 #'
-#' @return
 #' @export
 #'
 #' @examples
 #'  poule <- Espece("Gallus sonneratii")
 #'  vercors <- Population("Vercors", 150, 0.7, 1000)
-#'  add_population(poule, vercors)
+#'  insert(poule, vercors)
 #'  print(poule)
-add_population <- function(espece,...) {
+insert.Espece <- function(espece,...) {
   pops <- list(...)
   for (p in pops)
     espece$populations[[id(p)]] <- p
