@@ -28,7 +28,7 @@ Espece <- function(identifiant) {
 #' @export
 #'
 #' @examples
-#'  nb_p <- length.Espece(Gallus gallus)
+#'  nb_p <- length.Espece(Gallus varius)
 #'  print(nb_p)
 length.Espece <- function(x) {
   length(x$populations)
@@ -43,7 +43,7 @@ length.Espece <- function(x) {
 #' @export
 #'
 #' @examples
-#'  poule <- Espece("Gallus gallus")
+#'  poule <- Espece("Gallus lafayetti")
 #'  print(poule)
 print.Espece <- function(x, ...) {
   cat("Espece : ", x$identifiant, "avec ",length(x)," populations\n")
@@ -59,7 +59,7 @@ print.Espece <- function(x, ...) {
 #' @export
 #'
 #' @examples
-#'  poule <- Espece("Gallus gallus")
+#'  poule <- Espece("Gallus sonneratii")
 #'  vercors <- Population("Vercors", 150, 0.7, 1000)
 #'  add_population(poule, vercors)
 #'  print(poule)
@@ -70,7 +70,7 @@ add_population <- function(espece,...) {
 }
 
 
-#' Title
+#' Verifier la classe d'une Espece
 #'
 #' @param x
 #'
@@ -78,6 +78,12 @@ add_population <- function(espece,...) {
 #' @export
 #'
 #' @examples
+#'  poule <- Espece("Gallus gallus")
+#'  is_Espece(poule)
+#'  # TRUE
+#'  dindon <- Population("Belledonne", 600, 0.1, 2000)
+#'  is_Espece(dindon)
+#'  # FALSE
 is_Espece <- function(x) {
   "Espece" %in% class(x)
 }
