@@ -1,11 +1,21 @@
-#' Title
+#' Nombre de population
 #'
-#' @param milieu
+#' @param milieu objet de type "Milieu"
 #'
-#' @return
+#' @return le nombre de population
 #' @export
 #'
 #' @examples
+#' #' m <- Milieu("environnement")
+#' e1 <- Espece("e1")
+#' e2 <- Espece("e2")
+#' insert(m, e1, e2)
+#' p1 <- Population("p1", 10, 0.8, 1000)
+#' p2 <- Population("p2", 10, 0.8, 500)
+#' p3 <- Population("p3", 10, 0.8, 1000)
+#' insert(e1, p1, p2)
+#' insert(e2, p3)
+#' npops(m)
 npops <- function(milieu) {
   if (!is_Milieu(milieu)) {
     stop("milieu must be of class Milieu")
@@ -20,9 +30,9 @@ npops <- function(milieu) {
   n
 }
 
-#' Title
+#' Simulation des tailles de population
 #'
-#' @param milieu
+#' @param milieu objet de type "Milieu"
 #' @param temps
 #' @param competition
 #'
