@@ -7,12 +7,10 @@
 #'
 #' @examples
 Milieu <- function(identifiant) {
-  structure(list(
-    identifiant = identifiant,
-    especes = list()
-  ),
-  class = "Milieu"
-  )
+  m <- new.env()
+  class(m) <- "Millieu"
+  m$identifiant <- identifiant
+  m
 }
 
 #' Ajout_Espece in Milieu
