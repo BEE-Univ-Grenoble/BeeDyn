@@ -60,6 +60,7 @@ simulate_pop <- function(milieu,temps,competition=NULL) {
   i <- 0
   n <- character(npop)
 
+  #initialisation de la matrice de taille, récupération des taux de reproduction et des noms des populations
   for (e in get_species(milieu))
     for (p in get_populations(e)) {
       i<-i+1
@@ -70,9 +71,11 @@ simulate_pop <- function(milieu,temps,competition=NULL) {
 
   colnames(popsizes) <- n
 
+  # Calcule si besoin de la matrice de competition
   if (is.null(competition))
     competition <- Competition(milieu)
 
+  # remplissage de la matrice de taille
   for (t in 2:temps) {
     delta <- rates * (1 - popsizes[t-1,] %*% competition) * popsizes[t-1,]
     popsizes[t,] <- popsizes[t-1,] + delta
@@ -80,6 +83,7 @@ simulate_pop <- function(milieu,temps,competition=NULL) {
 
   i <- 0
 
+  # incrémentation des tailles aux niveaux des objets populations
   for (e in get_species(milieu))
     for (p in get_populations(e)) {
       i<-i+1
