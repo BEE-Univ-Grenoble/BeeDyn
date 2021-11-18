@@ -28,7 +28,7 @@ Espece <- function(identifiant) {
 #' @export
 #'
 #' @examples
-#'  nb_p <- length.Espece(Gallus gallus)
+#'  nb_p <- length.Espece(Gallus varius)
 #'  print(nb_p)
 length.Espece <- function(x) {
   length(x$populations)
@@ -36,14 +36,15 @@ length.Espece <- function(x) {
 
 #' Affiche un objet espèce
 #'
-#' @param x identifiant de l'espèce
+#' Affiche l'identifiant et le nombre de populations d'une espèce
+#'
+#' @param x un objet instance de Espece
 #' @param ...
 #'
-#' @return Renvoie l'identifiant et le nombre de populations d'une espèce
 #' @export
 #'
 #' @examples
-#'  poule <- Espece("Gallus gallus")
+#'  poule <- Espece("Gallus lafayetti")
 #'  print(poule)
 print.Espece <- function(x, ...) {
   cat("Espece : ", x$identifiant, "avec ",length(x)," populations\n")
@@ -52,32 +53,52 @@ print.Espece <- function(x, ...) {
 
 #' Ajoute une population dans une Espece
 #'
-#' @param espece
-#' @param population
+#' @param espece un objet instance de Espece
+#' @param ... une ou des instance.s de Population
 #'
-#' @return
 #' @export
 #'
 #' @examples
-#'  poule <- Espece("Gallus gallus")
+#'  poule <- Espece("Gallus sonneratii")
 #'  vercors <- Population("Vercors", 150, 0.7, 1000)
-#'  add_population(poule, vercors)
+#'  insert(poule, vercors)
 #'  print(poule)
-add_population <- function(espece,...) {
+insert.Espece <- function(espece,...) {
   pops <- list(...)
   for (p in pops)
     espece$populations[[id(p)]] <- p
 }
 
 
-#' Title
+#' Verifier la classe d'une Espece
 #'
 #' @param x
 #'
-#' @return
+#' @return une valeur logique, TRUE si la classe est Espece
 #' @export
 #'
 #' @examples
+#'  poule <- Espece("Gallus murghi")
+#'  is_Espece(poule)
+#'  # TRUE
+#'  dindon <- Population("Belledonne", 600, 0.1, 2000)
+#'  is_Espece(dindon)
+#'  # FALSE
 is_Espece <- function(x) {
   "Espece" %in% class(x)
+}
+
+
+#' Recupère les populations d'une instance Espece
+#'
+#' @param espece Une instance Espece
+#'
+#' @return une liste de populations
+#' @export
+#'
+#' @examples
+#'  poule <- Espece("Gallus bankiva")
+#'  get_populations(poule)
+get_populations <- function(espece) {
+  espece$populations
 }
