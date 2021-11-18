@@ -50,8 +50,8 @@ npops <- function(milieu) {
 #' insert(e1, p1, p2)
 #' insert(e2, p3)
 #' comp <- Competition(m)
-#' simulate(m,temps=20,competition=comp)
-simulate <- function(milieu,temps,competition=NULL) {
+#' simulate_pop(m,temps=20,competition=comp)
+simulate_pop <- function(milieu,temps,competition=NULL) {
 
   npop <- npops(milieu)
 
