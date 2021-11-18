@@ -6,6 +6,8 @@
 #' @export
 #'
 #' @examples
+#' m <- Milieu("Prairie")
+#' print(m)
 Milieu <- function(identifiant) {
   m <- new.env()
   class(m) <- "Milieu"
@@ -22,6 +24,8 @@ Milieu <- function(identifiant) {
 #' @export
 #'
 #' @examples
+#' m <- Milieu("Prairie")
+#' is_Milieu(m)
 is_Milieu <- function(x) {
   "Milieu" %in% class(x)
 }
@@ -70,4 +74,16 @@ print.Milieu <- function(x, ...) {
 #' @examples
 length.Milieu <- function(x) {
   length(x$especes)
+}
+
+#' Title
+#'
+#' @param milieu
+#'
+#' @return
+#' @export
+#'
+#' @examples
+species <- function(milieu) {
+  milieu$especes
 }
