@@ -13,6 +13,7 @@ Espece <- function(identifiant) {
   e <- new.env()
   class(e) <- "Espece"
   e$identifiant = identifiant
+  e$populations = list()
   e
 }
 
@@ -49,12 +50,34 @@ print.Espece <- function(x, ...) {
 }
 
 
-populations <- function(espece) {
-  espece$populations
+#' Ajoute une population dans une Espece
+#'
+#' @param espece
+#' @param population
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#'  poule <- Espece("Gallus gallus")
+#'  vercors <- Population("Vercors", 150, 0.7, 1000)
+#'  add_population(poule, vercors)
+#'  print(poule)
+add_population <- function(espece,...) {
+  pops <- list(...)
+  for (p in pops)
+    espece$populations[[id(p)]] <- p
 }
 
-`add_population<-` <- function(espece,value) {
-  espece$populations <- c(espece$populations, list(value))
-  espece
-}
 
+#' Title
+#'
+#' @param x
+#'
+#' @return
+#' @export
+#'
+#' @examples
+is_Espece <- function(x) {
+  "Espece" %in% class(x)
+}
