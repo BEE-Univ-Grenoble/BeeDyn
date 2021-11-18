@@ -53,8 +53,8 @@ print.Espece <- function(x, ...) {
 
 #' Ajoute une population dans une Espece
 #'
-#' @param espece
-#' @param population
+#' @param espece un objet instance de Espece
+#' @param ... une ou des instance.s de Population
 #'
 #' @export
 #'
@@ -74,11 +74,11 @@ insert.Espece <- function(espece,...) {
 #'
 #' @param x
 #'
-#' @return
+#' @return une valeur logique, TRUE si la classe est Espece
 #' @export
 #'
 #' @examples
-#'  poule <- Espece("Gallus gallus")
+#'  poule <- Espece("Gallus murghi")
 #'  is_Espece(poule)
 #'  # TRUE
 #'  dindon <- Population("Belledonne", 600, 0.1, 2000)
@@ -86,4 +86,19 @@ insert.Espece <- function(espece,...) {
 #'  # FALSE
 is_Espece <- function(x) {
   "Espece" %in% class(x)
+}
+
+
+#' Recupère les populations d'une instance Espece
+#'
+#' @param espece Une instance Espece
+#'
+#' @return une liste de populations
+#' @export
+#'
+#' @examples
+#'  poule <- Espece("Gallus bankiva")
+#'  get_populations(poule)
+get_populations <- function(espece) {
+  espece$populations
 }
