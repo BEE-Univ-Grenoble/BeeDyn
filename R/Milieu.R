@@ -26,6 +26,8 @@ Milieu <- function(identifiant) {
 #' @examples
 #' m <- Milieu("Prairie")
 #' is_Milieu(m)
+#'
+#' #TRUE
 is_Milieu <- function(x) {
   "Milieu" %in% class(x)
 }
@@ -39,13 +41,18 @@ is_Milieu <- function(x) {
 #' @export
 #'
 #' @examples
+#' m <- Milieu("Prairie")
+#' e1 <- Espece("espece1")
+#'
+#' insert.Milieu(m,e1)
+#'
 insert.Milieu <- function(milieu, ...) {
   especes <- list(...)
   for (e in especes)
     milieu$especes[[id(e)]] <- e
 }
 
-#' print.milieu
+#' Method pour print un objet de classe Milieu
 #'
 #' @param x
 #' @param ...
@@ -54,6 +61,8 @@ insert.Milieu <- function(milieu, ...) {
 #' @export
 #'
 #' @examples
+#' m <- Milieu("Prairie")
+#' print(m)
 print.Milieu <- function(x, ...) {
   cat("Milieu", x$identifiant, ":nombre d'espèces=", length(x$especes), "\n")
   cat("Liste d'espèces : \n")
@@ -76,7 +85,7 @@ length.Milieu <- function(x) {
   length(x$especes)
 }
 
-#' Title
+#' Fonction qui retourne les especes presentent dans le milieu
 #'
 #' @param milieu
 #'
@@ -84,6 +93,6 @@ length.Milieu <- function(x) {
 #' @export
 #'
 #' @examples
-species <- function(milieu) {
+get_species <- function(milieu) {
   milieu$especes
 }
