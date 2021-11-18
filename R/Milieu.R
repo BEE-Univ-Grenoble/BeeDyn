@@ -8,9 +8,22 @@
 #' @examples
 Milieu <- function(identifiant) {
   m <- new.env()
-  class(m) <- "Millieu"
+  class(m) <- "Milieu"
   m$identifiant <- identifiant
+  m$especes = list()
   m
+}
+
+#' Title
+#'
+#' @param x
+#'
+#' @return
+#' @export
+#'
+#' @examples
+is_Milieu <- function(x) {
+  "Milieu" %in% class(x)
 }
 
 #' Ajout_Espece in Milieu
@@ -22,9 +35,10 @@ Milieu <- function(identifiant) {
 #' @export
 #'
 #' @examples
-Ajout_Espece <- function(milieu, ...) {
-  especes <- as.list(...)
-  milieu$especes <- c(milieu$especes, especes)
+insert.Milieu <- function(milieu, ...) {
+  especes <- list(...)
+  for (e in especes)
+    milieu$especes[[id(e)]] <- e
 }
 
 #' print.milieu
@@ -36,7 +50,7 @@ Ajout_Espece <- function(milieu, ...) {
 #' @export
 #'
 #' @examples
-print.milieu <- function(x, ...) {
+print.Milieu <- function(x, ...) {
   cat("Milieu", x$identifiant, ":nombre d'espèces=", length(x$especes), "\n")
   cat("Liste d'espèces : \n")
   for (e in x$especes) {
