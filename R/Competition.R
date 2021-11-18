@@ -30,7 +30,7 @@ Competition <- function(milieu) {
 
   npop
 
-  # # Création de la matrice en fonction du nombre de population
+  # Création de la matrice en fonction du nombre de population
   competition_matrice <- matrix(0, ncol = npop, nrow = npop)
 
   # affectation de 1/K dans la diagonale, récupération des noms de population
@@ -54,9 +54,9 @@ Competition <- function(milieu) {
 
 #' Title
 #'
-#' @param x
+#' @param x objet
 #'
-#' @return
+#' @return TRUE si l'objet x est de type "Competition"
 #' @export
 #'
 #' @examples
@@ -70,8 +70,8 @@ Competition <- function(milieu) {
 #' insert(e1, p1, p2)
 #' insert(e2, p3)
 #' comp <- Competition(m)
-#' is_competition(comp)
-#' is_competition(m)
+#' is_Competition(comp)
+#' is_Competition(m)
 is_Competition <- function(x) {
   "Competition" %in% class(x)
 }
