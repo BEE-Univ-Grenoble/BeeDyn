@@ -1,4 +1,9 @@
 
+#' @import tidyverse
+NULL
+
+
+
 #' Population structure
 #' A structured object to describe population
 #'
@@ -117,4 +122,21 @@ get_pop_size <- function(x){
 #' @examples
 get_growth_rate <- function(x) {
   x$taux
+}
+
+
+
+#' tibble de la population
+#'
+#' @param x : population
+#'
+#' @return
+#' un tibble avec des na dans le milieu, des na dans les especes, le nombre d'individus dans les populations et le temps
+#' @export
+#'
+#' @examples
+#' astibblepop(pop)
+astibblepop <- function(e){
+e <- list(milieu = NA, espece = NA, population = Population, temps = 1)
+milieu_tibble <- as_tibble(e)
 }
