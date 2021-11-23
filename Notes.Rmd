@@ -29,17 +29,17 @@ $$
 
 # Les classes à défiinir
 
-## Milieu
+## Milieu (Renan)
 
 - identifiant : charactere
 - especes : liste d'objets de la classe `Espece`
 
-## Espece
+## Espece (Camille)
 
 - identifiant : charactere
 - populations : liste d'objets de la classe `Population`
 
-## Population
+## Population (Marion)
 
 - identifiant : charactere
 - capacite : une valeur numérique indiquant la taille 
@@ -49,13 +49,39 @@ $$
 - taille : un vecteur de numérique indiquant la taille
            de la population au cours du temps
 
-## Competition
+## Competition (Margot)
 
 Une matrice carrée de taille nombre de population, 
 par défaut diagonale est à $1/K_{pop}$ les autres valeurs sont à 0.
 les populations en colonne affectent les populations en ligne
 si > 0 -> réduit la population ligne
 si < 0 -> favorise la population ligne
+
+# Analyse des résultats
+
+## Graphique
+
+- Graphique population en fonction du temps au niveau de :
+   + du milieu
+   + de l'espèce
+   + de la population
+   
+- Graphique comparaison simulation
+
+solution faire une méthode as_tibble pour les types
+
+- Milieu
+- Espece
+- Population
+
+avec les colonnes
+
+- Id du milieu        : Environment
+- Id de l'espèce      : Species
+- Id de la population : Population
+- Temps               : Time
+- Valeur              : Count
+
 
 
 
