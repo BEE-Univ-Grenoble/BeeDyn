@@ -136,7 +136,10 @@ get_growth_rate <- function(x) {
 #'
 #' @examples
 #' astibblepop(pop)
-astibblepop <- function(e){
+as_tibble.Population <- function(e){
 e <- list(milieu = NA, espece = NA, population = Population, temps = 1)
 milieu_tibble <- as_tibble(e)
 }
+
+
+
