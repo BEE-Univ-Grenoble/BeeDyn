@@ -35,3 +35,26 @@ draw_pop_expansion.Espece <- function(objet, ylog = FALSE) {
   }
   gg_espece
 }
+
+
+#' Représenation graphique de l'évolution des espèces
+#'
+#' @param pop
+#'
+#' @return
+#' le graphique de la population selectionné
+#' @export
+#'
+#' @examples
+#' plot_pop(pop1)
+plot_pop <- function(m, ylog = F){
+  gg_pop <- as_tibble(m) %>%
+    ggplot(aes(x = temps, y = valeur)) +
+    geom_point(aes(col = population)) +
+    facet_grid( ~ population)
+
+  if(ylog){df_pop <- gg_pop + scale_y_log10()}
+
+  gg_pop
+
+}
