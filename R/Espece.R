@@ -1,3 +1,7 @@
+#' @import tidyverse
+NULL
+
+
 #' Crée une nouvelle instance de la classe `Espece`
 #'
 #' @param identifiant une chaine de caractères precisant un code pour chaque espèce
@@ -102,3 +106,18 @@ is_Espece <- function(x) {
 get_populations <- function(espece) {
   espece$populations
 }
+
+
+#' Convertir une instance Espece en Tibble
+#'
+#' @param x Une instance Espece
+#'
+#' @return
+#' @export
+#'
+#' @examples
+as_tibble.Espece <- function(e, milieu_id = NA) {
+  bind_rows(lapply(e$populations,
+                   function(x) as_tibble(x,milieu_id = milieu_id,species_id=id(e))
+                   )
+            )  }

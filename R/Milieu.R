@@ -1,3 +1,7 @@
+#' @import tidyverse
+NULL
+
+
 #' Structure Milieu
 #'
 #' @param identifiant
@@ -100,3 +104,17 @@ get_species <- function(milieu) {
 }
 
 
+#' Convertir une instance Espece en Tibble
+#'
+#' @param x Une instance Espece
+#'
+#' @return
+#' @export
+#'
+#' @examples
+as_tibble.Milieu <- function(e) {
+  bind_rows(lapply(e$especes,
+                   function(x) as_tibble(x,milieu_id=id(e))
+                   )
+  )
+}
