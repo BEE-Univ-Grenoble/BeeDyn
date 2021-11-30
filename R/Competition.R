@@ -1,5 +1,9 @@
 #' Matrice des coefficients de competition
 #'
+#'
+#' La diagonale contient : 1/capacité du milieux pour l'espece.
+#' Les compétitions entre populations sont initialiser à 0, cependant on peut lire la matrice comme la compétition de la population en ligne sur celle en colonne, avec un nombre positif, la population en ligne défavorise celle en colonne
+#'
 #' @param milieu objet de type "Milieu"
 #'
 #' @return la matrice des coefficients de competition
