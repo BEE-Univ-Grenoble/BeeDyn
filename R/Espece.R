@@ -116,13 +116,8 @@ get_populations <- function(espece) {
 #' @export
 #'
 #' @examples
-as.tibble.Espece <- function(x) {
-  e <- tibble()
-  e$Milieu = rep(NA, length(x$opulations))
-  e$Espece = rep(x$identifiant, length(x$populations))
-  for (i in 1:length(x$populations)) {
-    e$Population[i] = x$populations[i,]$identifiant
-    e$Temps[i] = 1
-    e$Valeur[i] = x$population[i,]$taille_ini
-  }
-  }
+as_tibble.Espece <- function(e, milieu_id = NA) {
+  bind_rows(lapply(e$populations,
+                   function(x) as_tibble(x,milieu_id = milieu_id,species_id=id(e))
+                   )
+            )  }
