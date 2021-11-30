@@ -93,10 +93,12 @@ length.Milieu <- function(x) {
 #'
 #' @param milieu
 #'
-#' @return
+#' @return Nom des espèces présentent dans le milieu
 #' @export
 #'
 #' @examples
+#' m <- Milieu("Prairie")
+#' get_species(m)
 get_species <- function(milieu) {
   milieu$especes
 }
