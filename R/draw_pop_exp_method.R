@@ -50,10 +50,35 @@ draw_pop_expansion.Espece <- function(objet, ylog = FALSE) {
 draw_pop_expansion.Population <- function(objet, ylog = FALSE) {
   gg_pop <- as_tibble(objet) %>%
     ggplot(aes(x = temps, y = valeur)) +
-    geom_point(aes(col = population))
+    geom_point(aes(col = population)) +
+    geom_line(aes(col = population))
 
   if(ylog){gg_pop <- gg_pop + scale_y_log10()}
 
   gg_pop
 
 }
+
+
+#' Représenation graphique de l'évolution des espèces
+#'
+#' @param pop
+#'
+#' @return
+#' le graphique de la population selectionné
+#' @export
+#'
+#' @examples
+#' plot_pop(pop1)
+draw_pop_expansion.Milieu <- function(objet, ylog = FALSE) {
+  gg_pop <- as_tibble(objet) %>%
+    ggplot(aes(x = temps, y = valeur)) +
+    geom_point(aes(col = population, shape = espece)) +
+    geom_line(aes(col = population, lty = espece))
+
+  if(ylog){gg_pop <- gg_pop + scale_y_log10()}
+
+  gg_pop
+
+}
+
