@@ -47,13 +47,12 @@ draw_pop_expansion.Espece <- function(objet, ylog = FALSE) {
 #'
 #' @examples
 #' plot_pop(pop1)
-plot_pop <- function(m, ylog = F){
-  gg_pop <- as_tibble(m) %>%
+draw_pop_expansion.Population <- function(objet, ylog = FALSE) {
+  gg_pop <- as_tibble(objet) %>%
     ggplot(aes(x = temps, y = valeur)) +
-    geom_point(aes(col = population)) +
-    facet_grid( ~ population)
+    geom_point(aes(col = population))
 
-  if(ylog){df_pop <- gg_pop + scale_y_log10()}
+  if(ylog){gg_pop <- gg_pop + scale_y_log10()}
 
   gg_pop
 

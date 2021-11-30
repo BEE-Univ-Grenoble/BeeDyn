@@ -144,6 +144,3 @@ as_tibble.Population <- function(e, milieu_id = NA,species_id = NA){
             valeur = e$taille
         )
 }
-
-
-
