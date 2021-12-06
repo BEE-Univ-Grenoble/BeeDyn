@@ -84,19 +84,6 @@ length.Population <- function(x) {
   length(x$taille)
 }
 
-#' Capacité biotique
-#'
-#' @param x : environnement
-#'
-#' @return
-#' la capacité biotique
-#' @export
-#'
-#' @examples
-#' capacity(pop)
-get_capacity <- function(x) {
-  x$capacite
-}
 
 #' Taille de la population
 #'
@@ -111,19 +98,6 @@ get_capacity <- function(x) {
 get_pop_size <- function(x){
   x$taille
 }
-
-#' Title
-#'
-#' @param x
-#'
-#' @return
-#' @export
-#'
-#' @examples
-get_growth_rate <- function(x) {
-  x$taux
-}
-
 
 
 #' tibble de la population

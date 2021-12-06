@@ -9,9 +9,12 @@ title: "Dynamique des pop - Notes de travail"
 
 # Equation de dynamique de pop
 $$
-\frac{\partial N_1}{\partial t} = R_1 N_1 (1 - (\alpha_{1,1} N_1 + \alpha_{1,2} N_2))
+\frac{\partial N_1}{\partial t} = N1 [R_{1,1}(1-N_1/K_1)+R_{1,2}(1-N_2/K_2)]
+$$
 $$
 
+1 - \frac{\alpha_{1,1}( N_1 +\alpha_{1,2} N_2)}{(\alpha_{1,2}\alpha_{2,2}N2)}
+$$
 # Concept 
 
 - Milieu
