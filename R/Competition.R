@@ -28,7 +28,7 @@ Competition <- function(milieu) {
   nom_population <- c()
   for (e in get_species(milieu)) {
     for (p in get_populations(e)) {
-      competition_matrice[num_colonne, num_colonne] <- 1 / p$capacite
+      competition_matrice[num_colonne, num_colonne] <- p$taux
       nom_population <- c(nom_population, paste(id(e), id(p), sep = "."))
       num_colonne <- num_colonne + 1
     }
