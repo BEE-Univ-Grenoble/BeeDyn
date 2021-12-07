@@ -51,7 +51,7 @@ latest_pop_size.Espece <- function(object) {
 #' @examples
 latest_pop_size.Milieu <- function(object) {
   latest <- lapply(object$especes,latest_pop_size)
-  n <- do.call(c,sapply(latest,names))
+  n <- do.call(c,lapply(latest,names))
   vlatest <- do.call(c, latest)
   names(vlatest) <- n
   vlatest
@@ -168,7 +168,7 @@ get_capacity.Espece <- function(object) {
 #' @examples
 get_capacity.Milieu <- function(object) {
   capacity <- lapply(object$especes,get_capacity)
-  n <- do.call(c,sapply(capacity,names))
+  n <- do.call(c,lapply(capacity,names))
   vcapacity <- do.call(c, capacity)
   names(vcapacity) <- n
   vcapacity
@@ -229,7 +229,7 @@ get_growth_rate.Espece <- function(object) {
 #' @examples
 get_growth_rate.Milieu <- function(object) {
   growth_rate <- lapply(object$especes,get_growth_rate)
-  n <- do.call(c,sapply(growth_rate,names))
+  n <- do.call(c,lapply(growth_rate,names))
   vgrowth_rate <- do.call(c, growth_rate)
   names(vgrowth_rate) <- n
   vgrowth_rate
