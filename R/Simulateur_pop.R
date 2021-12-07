@@ -19,7 +19,7 @@
 #' insert(e1, p1, p2)
 #' insert(e2, p3)
 #' comp <- Competition(m)
-#' mod_exp <- function(milieu) {
+#' mod_exp <- function(milieu,competition) {
 #'    sizes <- latest_pop_size(milieu)
 #'    rates <- get_growth_rate(milieu)
 #'    delta <- sizes * rates
@@ -30,6 +30,6 @@ simulate_pop <- function(modele,milieu,temps,competition=NULL) {
   reset(milieu)
 
   for (t in 1:temps) {
-    modele(m)
+    modele(m,competition)
   }
 }
