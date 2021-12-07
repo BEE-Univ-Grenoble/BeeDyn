@@ -30,6 +30,6 @@ simulate_pop <- function(modele,milieu,temps,competition=NULL) {
   reset(milieu)
 
   for (t in 1:temps) {
-    modele(m,competition)
+    modele(milieu,competition)
   }
 }
