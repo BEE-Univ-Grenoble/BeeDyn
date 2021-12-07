@@ -23,13 +23,14 @@
 #'    sizes <- latest_pop_size(milieu)
 #'    rates <- get_growth_rate(milieu)
 #'    delta <- sizes * rates
-#'    push_new_size(milieu,sizes + delta)
+#'    delta
 #' }
 #' simulate_pop(mod_exp,m,temps=20,competition=comp)
 simulate_pop <- function(modele,milieu,temps,competition=NULL) {
   reset(milieu)
 
   for (t in 1:temps) {
-    modele(milieu,competition)
+    push_new_size(milieu,
+                  latest_pop_size(milieu) + modele(milieu,competition))
   }
 }
