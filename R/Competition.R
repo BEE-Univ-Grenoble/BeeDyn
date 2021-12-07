@@ -59,13 +59,13 @@ Competition <- function(milieu) {
 
   # Création de la matrice en fonction du nombre de population
   competition_matrice <- matrix(0, ncol = npop, nrow = npop)
+  diag(competition_matrice) <- 1
 
   # affectation de 1/K dans la diagonale, récupération des noms de population
   num_colonne <- 1
   nom_population <- c()
   for (e in get_species(milieu)) {
     for (p in get_populations(e)) {
-      competition_matrice[num_colonne, num_colonne] <- p$taux
       nom_population <- c(nom_population, paste(id(e), id(p), sep = "."))
       num_colonne <- num_colonne + 1
     }

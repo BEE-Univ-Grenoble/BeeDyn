@@ -71,6 +71,8 @@ insert.Espece <- function(espece,...) {
   pops <- list(...)
   for (p in pops)
     espece$populations[[id(p)]] <- p
+
+  reset(espece)
 }
 
 

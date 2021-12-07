@@ -54,6 +54,8 @@ insert.Milieu <- function(milieu, ...) {
   especes <- list(...)
   for (e in especes)
     milieu$especes[[id(e)]] <- e
+
+  reset(milieu)
 }
 
 #' Method pour print un objet de classe Milieu
