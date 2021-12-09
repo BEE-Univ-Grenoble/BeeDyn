@@ -53,7 +53,9 @@ Population <- function(identifiant, taille_ini, taux_rep, capacite){
 #' print.Population(pop)
 #'
 print.Population <- function(x) {
-  cat("Population : ", x$identifiant, "avec une taille initiale de", x$taille, ",", "une capacité biotique de", x$capacité, "et un taux de reproduction de", x$taux, "\n")
+  cat("Population : ", x$identifiant, "avec une taille initiale de", x$taille, "\n"
+      ",", "une capacité biotique de", x$capacite, "\n"
+      "et un taux de reproduction de", x$taux, "\n")
 }
 
 #' Classe de la population
